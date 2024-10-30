@@ -5,27 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>أحبك</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
         #message {
             display: none;
-            font-size: 24px;
-            color: red;
+            font-size: 36px;
+            color: #ff69b4;
             margin-top: 20px;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: center;
         }
+
+        #message.visible {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+        }
+
         a {
-            font-size: 18px;
-            color: blue;
-            text-decoration: underline;
+            font-size: 22px;
+            color: #007bff;
+            text-decoration: none;
             cursor: pointer;
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            border-radius: 25px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        a:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .heart {
+            color: #ff69b4;
+            font-size: 36px;
+            animation: beat 0.5s infinite alternate;
+        }
+
+        @keyframes beat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
         }
     </style>
 </head>
 <body>
-    <a onclick="showMessage()">انقر هنا</a>
-    <div id="message">أحبك ❤️</div>
+    <a onclick="showMessage()">انقر هنا لتعرف السر</a>
+    <div id="message">أحبك <span class="heart">❤️</span></div>
 
     <script>
         function showMessage() {
-            document.getElementById("message").style.display = "block";
+            const message = document.getElementById("message");
+            message.classList.add("visible");
         }
     </script>
 </body>
