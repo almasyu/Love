@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أحبك</title>
+    <title>قصيدة</title>
     <style>
         body {
             display: flex;
@@ -12,20 +12,23 @@
             height: 100vh;
             background-color: #f0f8ff;
             font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            padding: 20px;
         }
 
-        #message {
+        #poem {
             display: none;
-            font-size: 36px;
-            color: #ff69b4;
+            font-size: 24px;
+            color: #4b0082;
+            line-height: 1.8;
             margin-top: 20px;
             opacity: 0;
-            transform: scale(0.5);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            text-align: center;
+            transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        #message.visible {
+        #poem.visible {
             display: block;
             opacity: 1;
             transform: scale(1);
@@ -46,31 +49,31 @@
             background-color: #007bff;
             color: #ffffff;
         }
-
-        .heart {
-            color: #ff69b4;
-            font-size: 36px;
-            animation: beat 0.5s infinite alternate;
-        }
-
-        @keyframes beat {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.2);
-            }
-        }
     </style>
 </head>
 <body>
-    <a onclick="showMessage()">انقر هنا لتعرف السر</a>
-    <div id="message">أحبك <span class="heart">❤️</span></div>
+    <a onclick="showPoem()">انقر هنا لتقرأ القصيدة</a>
+    <div id="poem">
+        ياوله بحروف شاعر ... يا النهايات البهية<br>
+        أشهدي أبيات شعري وأسمعيها بالروية<br>
+        أكتبي بالبيت كلمة وأتركي الباقي عليه .. ..<br><br>
+        
+        أسمعي مدح العذارى وأفخري يا السرمدية<br>
+        كلهم عابر ويرحل وأنت ما بعدك بقية .. ..<br><br>
+        
+        أجمعي أنصاص غيرك من معارف وأجنبية ..<br>
+        وأقسميها بالتساوي وأقري الناتج عليه ...<br><br>
+        
+        ما بعد وصلوا لحسنك والذي سوى البرية<br>
+        أفرحي وفلي جديلك.. وأعبري روحة وجية<br>
+        في خفوق اللي يحبك.. وذا مكانك بين أيديه<br>
+        وأتركي العاذل بناره.. ما شهد مثلك صبية ..
+    </div>
 
     <script>
-        function showMessage() {
-            const message = document.getElementById("message");
-            message.classList.add("visible");
+        function showPoem() {
+            const poem = document.getElementById("poem");
+            poem.classList.add("visible");
         }
     </script>
 </body>
