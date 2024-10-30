@@ -15,27 +15,36 @@
             direction: rtl;
             text-align: center;
             padding: 20px;
+            margin: 0;
+        }
+
+        #poem-container {
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         #poem {
             display: none;
-            font-size: 24px;
+            font-size: 22px;
             color: #4b0082;
             line-height: 1.8;
             margin-top: 20px;
             opacity: 0;
-            transform: scale(0.8);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
         }
 
         #poem.visible {
             display: block;
             opacity: 1;
-            transform: scale(1);
+            transform: translateY(0);
         }
 
         a {
-            font-size: 22px;
+            font-size: 20px;
             color: #007bff;
             text-decoration: none;
             cursor: pointer;
@@ -43,6 +52,8 @@
             border: 2px solid #007bff;
             border-radius: 25px;
             transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+            margin-top: 20px;
         }
 
         a:hover {
@@ -52,22 +63,24 @@
     </style>
 </head>
 <body>
-    <a onclick="showPoem()">انقر هنا لتقرأ القصيدة</a>
-    <div id="poem">
-        ياوله بحروف شاعر ... يا النهايات البهية<br>
-        أشهدي أبيات شعري وأسمعيها بالروية<br>
-        أكتبي بالبيت كلمة وأتركي الباقي عليه .. ..<br><br>
-        
-        أسمعي مدح العذارى وأفخري يا السرمدية<br>
-        كلهم عابر ويرحل وأنت ما بعدك بقية .. ..<br><br>
-        
-        أجمعي أنصاص غيرك من معارف وأجنبية ..<br>
-        وأقسميها بالتساوي وأقري الناتج عليه ...<br><br>
-        
-        ما بعد وصلوا لحسنك والذي سوى البرية<br>
-        أفرحي وفلي جديلك.. وأعبري روحة وجية<br>
-        في خفوق اللي يحبك.. وذا مكانك بين أيديه<br>
-        وأتركي العاذل بناره.. ما شهد مثلك صبية ..
+    <div id="poem-container">
+        <a onclick="showPoem()">انقر هنا لتقرأ القصيدة</a>
+        <div id="poem">
+            ياوله بحروف شاعر ... يا النهايات البهية<br>
+            أشهدي أبيات شعري وأسمعيها بالروية<br>
+            أكتبي بالبيت كلمة وأتركي الباقي عليه .. ..<br><br>
+
+            أسمعي مدح العذارى وأفخري يا السرمدية<br>
+            كلهم عابر ويرحل وأنت ما بعدك بقية .. ..<br><br>
+
+            أجمعي أنصاص غيرك من معارف وأجنبية ..<br>
+            وأقسميها بالتساوي وأقري الناتج عليه ...<br><br>
+
+            ما بعد وصلوا لحسنك والذي سوى البرية<br>
+            أفرحي وفلي جديلك.. وأعبري روحة وجية<br>
+            في خفوق اللي يحبك.. وذا مكانك بين أيديه<br>
+            وأتركي العاذل بناره.. ما شهد مثلك صبية ..
+        </div>
     </div>
 
     <script>
